@@ -13,13 +13,13 @@
 /dataSources.local.xml
 
 # Ignoring auto-generated files.
-target
+target/
 
 # Ignoring all log files.
 *.log
 
 # Ignoring .idea folder
-.idea
+.idea/
 
 # Ignoring unused main folder
 /src/main

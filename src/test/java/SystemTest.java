@@ -41,8 +41,8 @@ public class SystemTest {
     }
 
     /* From Steam Store main page, searches for the searchbar element, sends
-    * "Stardew Valley" as the keywords to be searched and enter the search.
-    * Then finally checks if the actual page URL contains the targeted keywords. */
+    * "Stardew Valley" as the keywords to be searched and enters the search.
+    * Then finally checks if the current page URL contains the searched keywords. */
     @Test
     public void expectsToSearchStardewValleyOnSteamStoreTest() {
         webDriver.get("https://store.steampowered.com/");

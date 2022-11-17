@@ -33,11 +33,11 @@ public class SystemTest {
     }
 
     /* Tries to directly open my Steam Profile page and checks if it's open by
-    * matching page titles. */
+    * checking if current page URL contains my id. */
     @Test
     public void expectsToBeInGigaSteamProfilePageTest() {
         webDriver.get("https://steamcommunity.com/id/gigacs");
-        Assertions.assertEquals("Steam Community :: giga", webDriver.getTitle());
+        Assertions.assertTrue(webDriver.getCurrentUrl().contains("/id/gigacs"));
     }
 
     /* From Steam Store main page, searches for the searchbar element, sends
@@ -47,7 +47,7 @@ public class SystemTest {
     public void expectsToSearchStardewValleyOnSteamStoreTest() {
         webDriver.get("https://store.steampowered.com/");
         webDriver.findElement(By.xpath("//*[@id=\"store_nav_search_term\"]")).sendKeys("Stardew Valley", Keys.ENTER);
-        Assertions.assertTrue(webDriver.getCurrentUrl().contains("/search/?term=Stardew+Valley"), webDriver.getCurrentUrl());
+        Assertions.assertTrue(webDriver.getCurrentUrl().contains("/search/?term=Stardew+Valley"));
     }
 
     /* From the search page inside Steam Store after searching for Stardew Valley,
